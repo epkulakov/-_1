@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New_book</title>
+</head>
+<style>
+    .buton-stile {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #1bf5e6;
+    border: 1px solid #000;
+    color: #333;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 10px;
+}
+</style>
+<body bgcolor="#47f51b">
+    <h1>Создание новой книги</h1>
+    <h3>Напишите: Title - название вашей книги <br>
+        Author - автора<br>
+        Opisanie - описание<br>
+        Date - дату издания или дату занесение в базу данных по вашей цели</h3>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Добавить</button>
+            </form>
+    <a href="http://127.0.0.1:8000/biblioteka/books/" class="buton-stile">Просмотр всех книг</a>
+</body>
+</html>

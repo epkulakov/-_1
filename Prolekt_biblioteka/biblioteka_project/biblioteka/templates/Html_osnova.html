@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book</title>
+</head>
+<style>
+    .dotted { outline: 5px solid green; outline-offset: 10px; border-radius: 10px;}
+
+    .buton-stile {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #1bf5e6;
+    border: 1px solid #000;
+    color: #333;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 10px;
+}
+
+</style>
+<body bgcolor="#47f51b">
+    <h1 style="text-align: center"> Библиотека </h1>
+    <h2 style="text-align: left">Список книг</h2>
+    <ol>
+        <ul style="list-style-type: none;">
+            <h2>ID Название</h2>
+            {% for i in book %}
+                <a href="{% url 'podrobn' book_id=i.id %}" class="dotted">{{ i.bok }}</a><h1></h1>
+            {% endfor %}
+        </ul>
+    </ol>
+    <a href="http://127.0.0.1:8000/biblioteka/udalen/" class="buton-stile">Удалить книгу из базы данных</a><h1></h1>
+    <a href="http://127.0.0.1:8000/biblioteka/dobavlen/" class="buton-stile">Добавить книгу в базу данных</a><h1></h1>
+    <a href="http://127.0.0.1:8000/biblioteka/izmenenie/" class="buton-stile">Изменить книгу в базе данных</a><h1></h1>
+</body>
+</html>
